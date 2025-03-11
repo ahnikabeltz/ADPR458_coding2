@@ -28,15 +28,8 @@ body {
 grid-column: span 12;
 }
     
-
-/* Desktop Layout */
-@media screen and (min-width: 40em) {
-    .col-span-8{
-        grid-column: span 6;
-    } 
-    .col-span-4{
-        grid-column: span 4;
-    }
+aside {
+    text-align: center;
 }
 
 header {
@@ -84,4 +77,48 @@ img.circle {
     color: red;
     font-weight: bold;
     text-decoration: none;
+}
+
+/* Button Style */
+
+a.button {
+    display: block;
+    min-width: 200px;
+    padding: 12px;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: dodgerblue;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+a.button:hover {
+    transform: translateY(-2px);
+    background-color: rgb(100, 180, 250);
+    box-shadow: 4px 8px 28px -10px rgba(0,0,0,0.56);
+}
+
+a.button:active {
+    background-color: rgb(10, 110, 210);
+}
+
+a.button:visited {
+    
+}
+
+/* Desktop Layout */
+
+@media screen and (min-width: 40em) {
+    a.button {
+        display: inline-block;
+    }
+    .col-span-8{
+        grid-column: span 6;
+    } 
+    .col-span-4{
+        grid-column: span 4;
+    }
 }
