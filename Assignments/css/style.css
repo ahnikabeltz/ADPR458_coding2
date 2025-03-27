@@ -73,7 +73,6 @@ img.circle {
 
 #nav-menu {
     background-color: #444;
-    padding: 0 1rem;
     display: flex;
     justify-content: center;
     position: sticky;
@@ -81,14 +80,17 @@ img.circle {
 }
 
 #nav-menu ul {
-    display: flex;
+    display: none; 
     gap: 20px;
     justify-content: center;
     list-style: none;
-    flex-flow: row wrap;
-    list-style: none;
     margin: 0;
     padding: 0;
+}
+
+#nav-menu ul.active {
+    display: flex;
+    flex-direction: column;
 }
 
 #nav-menu ul li {
@@ -100,7 +102,7 @@ img.circle {
 #nav-menu li a {
     display: inline-block;
     color: #fff;
-    padding: 20px;
+    padding: 12px 20px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 90px;
@@ -114,12 +116,22 @@ img.circle {
     background-color: #666;
 }
 
+#toggle-button {
+    margin-left: auto;
+}
+
+#nav-menu ul.active + #toggle-button {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+}
+
 /* Button Style */
 
 a.button {
     display: block;
     min-width: 200px;
-    padding: 12px;
+    padding: 12px 20px;
     margin-top: 20px;
     text-decoration: none;
     background-color: dodgerblue;
@@ -144,19 +156,47 @@ a.button:visited {
     
 }
 
+/* Card styles */
+.card {
+    background-color: #fff;
+    text-align: center;
+    margin: 1rem;
+    padding-bottom: 2rem;
+    box-shadow: 0 0 24px -8px rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.card-text {
+    padding: 0 2rem;
+}
+
 /* Desktop Layout */
 
 @media (min-width: 40em) {
     #nav-menu ul {
         display: flex;
+        flex-direction: row;
+    }
+    #toggle-button {
+        display: none;
     }
     a.button {
         display: inline-block;
     }
     .col-span-8{
-        grid-column: span 6;
+        grid-column: span 8;
     } 
     .col-span-4{
         grid-column: span 4;
+    }
+    
+    .work-section {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    .card {
+        flex: 0 1 284px;
     }
 }
